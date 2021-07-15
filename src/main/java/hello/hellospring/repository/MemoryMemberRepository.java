@@ -1,6 +1,7 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -19,6 +20,7 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public Optional<Member> findById(Long id) {
         //null반환을 사전에 예방(Optional.ofNullable)
+        //return Optional.ofNullable(store.get(id));
         return Optional.ofNullable(store.get(id));
     }
 
@@ -31,6 +33,7 @@ public class MemoryMemberRepository implements MemberRepository{
 
     @Override
     public List<Member> findAll() {
+
         return new ArrayList<>(store.values());
     }
 
