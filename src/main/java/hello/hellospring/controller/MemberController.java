@@ -21,6 +21,7 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String creatForm(){
+
         return "member/createMemberForm";
     }
 
@@ -36,7 +37,7 @@ public class MemberController {
     }
 
     @GetMapping("/members")
-    public String  list(Model model){
+    public String list(Model model){
         List<Member> members = memberService.findMembers();
         model.addAttribute("members",members);
         return "member/memberList";

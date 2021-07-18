@@ -25,11 +25,10 @@ class MemberServiceTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
-    @Commit
     public void join() {
         //Given
         Member member = new Member();
-        member.setName("hello");
+        member.setName("hello2");
         //When
         Long saveId = memberService.join(member);
 
@@ -46,7 +45,7 @@ class MemberServiceTest {
         System.out.println(member1.getName());
 
         Member member2 = new Member();
-        member2.setName("spring");
+        member2.setName("spring2");
         System.out.println(member2.getName());
         memberService.join(member2);
 
